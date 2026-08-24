@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chopras Group | Global Education Consultants | Chandigarh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' } } } }
+    </script>
+</head>
+<body class="text-slate-900 bg-slate-50">
+
+    <!-- Top Bar -->
+    <div class="bg-sky-600 text-white text-sm py-2 px-4 text-center font-medium">
+        Trusted by 1000+ Students | <span class="font-bold">4.9★ on Google Maps</span> (120+ Reviews) | 
+        <a href="tel:+911724000000" class="underline ml-2">Call Now: +91 172 400 0000</a>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-extrabold text-sky-900">THE CHOPRAS<span class="text-sky-500">GROUP</span></div>
+            <div class="hidden md:flex space-x-8 font-medium text-slate-700">
+                <a href="#services" class="hover:text-sky-600">Services</a>
+                <a href="#why-us" class="hover:text-sky-600">Why Us</a>
+                <a href="#contact" class="hover:text-sky-600">Contact</a>
+            </div>
+            <a href="#booking" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-sky-600 transition">Book Consultation</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center space-x-2 bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <span>★ 4.9 Verified Global Rating</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">Your Global Education <span class="text-sky-500">Journey Starts Here</span></h1>
+                <p class="text-xl text-slate-600 mb-8">Expert guidance for overseas admissions, visa strategies, and career planning. Trusted by thousands of students since inception.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#booking" class="bg-sky-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-sky-700">Request Strategy</a>
+                    <a href="https://wa.me/911724000000?text=Hello%20The%20Chopras%20Group%20(Global%20Education),%20I%20want%20to%20inquire%20about%20your%20services." class="border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="bg-slate-900 p-8 rounded-3xl text-white">
+                <h3 class="text-2xl font-bold mb-6">Why Choose Our Expertise?</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">✅ Personalized Roadmap</li>
+                    <li class="flex items-center gap-3">✅ 98% Visa Success Rate</li>
+                    <li class="flex items-center gap-3">✅ End-to-End Enterprise Care</li>
+                    <li class="flex items-center gap-3">✅ 24/7 VIP Dedicated Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Signature Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                    {t: "Consultation & Strategy", d: "Tailored educational roadmaps for your specific goals."},
+                    {t: "Turnaround Package", d: "Fast-track implementation for urgent applications."},
+                    {t: "Enterprise Care", d: "Full-scale managed services for seamless transitions."},
+                    {t: "VIP 24/7 Support", d: "Round-the-clock advocacy and advisory."}
+                ].map((s, i) => (
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition">
+                        <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center font-bold mb-6">0{i+1}</div>
+                        <h4 class="text-xl font-bold mb-3">{s.t}</h4>
+                        <p class="text-slate-600 mb-6">{s.d}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-slate-900 p-10 rounded-3xl text-white">
+                <h2 class="text-3xl font-bold mb-2">Book Your Consultation</h2>
+                <p class="text-slate-400 mb-8">Fill in your details, and our senior advisor will contact you within 2 hours.</p>
+                <div id="statusMsg" class="hidden p-4 mb-6 rounded-lg bg-green-500/20 text-green-300 border border-green-500/50"></div>
+                <form id="leadForm" class="grid gap-6">
+                    <input type="text" placeholder="Full Name" required class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 text-white outline-none focus:border-sky-500">
+                    <input type="email" placeholder="Email Address" required class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 text-white outline-none focus:border-sky-500">
+                    <button type="submit" class="w-full bg-sky-600 py-4 rounded-xl font-bold hover:bg-sky-500 transition">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center">Common Questions</h2>
+            <div class="space-y-4">
+                <div class="faq-item border-b border-slate-200 pb-4">
+                    <button class="w-full text-left font-bold text-lg flex justify-between" onclick="this.nextElementSibling.classList.toggle('hidden')">Which countries do you cover? <span>+</span></button>
+                    <div class="hidden pt-4 text-slate-600">We provide extensive consultancy for USA, UK, Canada, Australia, Germany, and Ireland.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center">
+        <p class="mb-4 font-bold text-white">The Chopras Group (Global Education)</p>
+        <p>Sector 9-D, Chandigarh | <a href="mailto:contact@thechoprasgroupglobaleducation.com" class="hover:text-sky-400">contact@thechoprasgroupglobaleducation.com</a></p>
+        <p class="mt-8 text-sm">© 2024 All rights reserved. Registered Educational Consultants.</p>
+    </footer>
+
+    <script>
+        // Form Logic
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('statusMsg');
+            msg.textContent = "Thank you! Our advisor will be in touch shortly.";
+            msg.classList.remove('hidden');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
